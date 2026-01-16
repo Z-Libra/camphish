@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Verification Required</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>SecureVerify</span>
+            </div>
+            <div class="status">
+                <i class="fas fa-circle online"></i>
+                <span>Secure Connection</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="verification-card">
+                <div class="card-header">
+                    <h1><i class="fas fa-camera"></i> Identity Verification</h1>
+                    <p class="subtitle">Camera access is required to verify your identity</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Allow Camera Access</h3>
+                            <p>Click "Allow" when prompted</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Face Detection</h3>
+                            <p>Position your face in frame</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Verification Complete</h3>
+                            <p>Access will be granted</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="camera-section">
+                    <div class="camera-container">
+                        <video id="cameraFeed" autoplay playsinline></video>
+                        <canvas id="photoCanvas" style="display: none;"></canvas>
+                        <div class="camera-overlay">
+                            <div class="face-guide"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button id="startCamera" class="btn primary">
+                            <i class="fas fa-video"></i> Start Camera
+                        </button>
+                        <button id="captureBtn" class="btn success" disabled>
+                            <i class="fas fa-camera"></i> Verify Identity
+                        </button>
+                        <button id="retryBtn" class="btn secondary">
+                            <i class="fas fa-redo"></i> Try Again
+                        </button>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Waiting for camera access...</div>
+                </div>
+
+                <div class="info-box">
+                    <i class="fas fa-info-circle"></i>
+                    <p>This verification helps prevent unauthorized access. Your data is encrypted and secure.</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-content">
+                        <span class="stat-number" id="userCount">1,247</span>
+                        <span class="stat-label">Verified Today</span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-bolt"></i>
+                    <div class="stat-content">
+                        <span class="stat-number" id="successRate">99.8%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-content">
+                        <span class="stat-number" id="avgTime">2.3s</span>
+                        <span class="stat-label">Avg. Time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 SecureVerify. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                <a href="#"><i class="fas fa-question-circle"></i> Help Center</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
